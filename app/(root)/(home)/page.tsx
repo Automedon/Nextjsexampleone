@@ -1,4 +1,5 @@
 import React from "react";
+import SearchForm from "@/components/SearchForm";
 
 const Page = () => {
   return (
@@ -9,6 +10,7 @@ const Page = () => {
             Automedon Projects
           </h1>
         </div>
+        <SearchForm />
       </section>
       Filters
     </main>
