@@ -3,10 +3,15 @@ import SearchForm from "@/components/SearchForm";
 import Filters from "@/components/Filters";
 import { getResources } from "@/sanity/actions";
 import ResourceCard from "@/components/ResourceCard";
+import Header from "@/components/Header";
 
 export const revalidate = 900;
 
-const Page = async () => {
+interface Props {
+  searchParams: { [key: string]: string | undefined };
+}
+
+const Page = async ({ searchParams }: Props) => {
   const resources = await getResources({ query: "", category: "", page: "1" });
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col">
