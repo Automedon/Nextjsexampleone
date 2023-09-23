@@ -20,6 +20,7 @@ export const getResourcesPlaylist = async () => {
           downloadLink,
           "image": poster.asset->url,
           views,
+          viewLink,
           category
         }
       }`
@@ -46,6 +47,7 @@ export const getResources = async (params: GetResourcesParams) => {
         downloadLink,
         "image": poster.asset->url,
         views,
+        viewLink,
         slug,
         category
       }`

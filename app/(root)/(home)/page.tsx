@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ResourceCard from "@/components/ResourceCard";
 import SearchForm from "@/components/SearchForm";
 import { getResources, getResourcesPlaylist } from "@/sanity/actions";
+import { ResourceCardProps } from "../../../components/ResourceCard";
 
 export const revalidate = 900;
 
@@ -48,6 +49,7 @@ const Page = async ({ searchParams }: Props) => {
                   id={resource._id}
                   image={resource.image}
                   downloadNumber={resource.views}
+                  viewLink={resource.viewLink}
                   downloadLink={resource.downloadLink}
                 />
               ))

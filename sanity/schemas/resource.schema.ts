@@ -19,6 +19,12 @@ const resourceSchema = {
       type: "url",
       validation: (Rule: any) => Rule.required(),
     },
+    {
+      name: "viewLink",
+      title: `View Link`,
+      type: "url",
+      validation: (Rule: any) => Rule.required(),
+    },
     { name: "views", title: "Views", type: "number", initialValue: 0 },
     {
       name: "poster",
