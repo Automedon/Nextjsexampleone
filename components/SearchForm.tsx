@@ -1,5 +1,6 @@
 "use client";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -9,7 +10,6 @@ import { formUrlQuery } from "@/sanity/utils";
 const SearchForm = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const pathname = usePathname();
 
   const [search, setSearch] = useState("");
 

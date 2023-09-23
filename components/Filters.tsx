@@ -26,7 +26,7 @@ const Filters = () => {
       newUrl = formUrlQuery({
         params: searchParms.toString(),
         key: "category",
-        value: link,
+        value: link.toLowerCase(),
       });
     }
 

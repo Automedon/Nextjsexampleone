@@ -1,9 +1,8 @@
-import React from "react";
-import SearchForm from "@/components/SearchForm";
 import Filters from "@/components/Filters";
-import { getResources, getResourcesPlaylist } from "@/sanity/actions";
-import ResourceCard from "@/components/ResourceCard";
 import Header from "@/components/Header";
+import ResourceCard from "@/components/ResourceCard";
+import SearchForm from "@/components/SearchForm";
+import { getResources, getResourcesPlaylist } from "@/sanity/actions";
 
 export const revalidate = 900;
 
@@ -12,8 +11,14 @@ interface Props {
 }
 
 const Page = async ({ searchParams }: Props) => {
-  const resources = await getResources({ query: "", category: "", page: "1" });
+  const resources = await getResources({
+    query: searchParams?.query || "",
+    category: searchParams?.category || "",
+    page: "1",
+  });
+
   const resourcesPlaylist = await getResourcesPlaylist();
+
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col">
       <section className="nav-padding w-full">
@@ -24,7 +29,9 @@ const Page = async ({ searchParams }: Props) => {
         </div>
         <SearchForm />
       </section>
+
       <Filters />
+
       {(searchParams?.query || searchParams?.category) && (
         <section className="flex-center mt-6 w-full flex-col sm:mt-20">
           <Header
@@ -50,6 +57,7 @@ const Page = async ({ searchParams }: Props) => {
           </div>
         </section>
       )}
+
       {resourcesPlaylist.map((item: any) => (
         <section
           key={item._id}

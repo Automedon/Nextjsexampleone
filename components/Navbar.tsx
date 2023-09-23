@@ -1,6 +1,5 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -9,6 +8,7 @@ const Navbar = () => {
         <Link href="/">
           <Image src="/jsm-logo.svg" width={55} height={40} alt="JSM logo" />
         </Link>
+
         <Image
           src="/hamburger-menu.svg"
           width={30}
