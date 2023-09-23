@@ -3,7 +3,7 @@ import { formUrlQuery } from "@/sanity/utils";
 import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-const links = ["All", "Nextjs", "Apollo", "Nestjs", "NodejS", "React"];
+export const links = ["All", "Nextjs", "Vanilla", "NodejS", "React"];
 
 const Filters = () => {
   const [active, setActive] = useState("");
@@ -26,7 +26,7 @@ const Filters = () => {
       newUrl = formUrlQuery({
         params: searchParms.toString(),
         key: "category",
-        value: link.toLowerCase(),
+        value: link,
       });
     }
 

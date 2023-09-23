@@ -1,3 +1,5 @@
+import { links } from "../../components/Filters";
+
 const resourceSchema = {
   name: "resource",
   title: "Resource",
@@ -33,7 +35,7 @@ const resourceSchema = {
       type: "string",
       validation: (Rule: any) => Rule.required(),
       options: {
-        list: ["All", "Nextjs", "Apollo", "Nestjs", "NodejS", "React"],
+        list: [...links],
       },
     },
   ],
